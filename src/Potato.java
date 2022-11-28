@@ -7,21 +7,21 @@ public class Potato {
     float x;
     float y;
     int w;
+    int h;
     float speed;
-
     PImage tater;
 
     //one param needs to be PApplet
     public Potato(float x, float y, PApplet p) {
         this.x = x;
         this.y = y;
-        w = (int)(Math.random()*100 + 50);
-        speed = (int)(Math.random()*5 + 2);
-
         this.p = p; //important
+        w = (int)(Math.random()*100 + 50);
+        h = (int)(Math.random()*100 + 50);
+        speed = (int)(Math.random()*10 + 2);
 
         tater = p.loadImage("potato.png");
-        tater.resize(w, 0);
+        tater.resize(w, h);
     }
 
     public void move(){
@@ -36,10 +36,7 @@ public class Potato {
     }
 
     public void display() {
-        //draw shapes on processing window
         p.image(tater, x, y);
-
-        //can also load an image to display
     }
 
 
